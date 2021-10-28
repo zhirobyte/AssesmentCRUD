@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JadwalController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes by Faiz Hanafi - 1910130008
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+route::resource('jadwal', JadwalController::class);
