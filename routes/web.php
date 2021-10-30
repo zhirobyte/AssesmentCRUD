@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::resource('jadwal', JadwalController::class);
+Route::resource('jadwal', JadwalController::class);
+Route::resource('dosen', DosenController::class);
+Route::resource('mahasiswa', MahasiswaController::class);
+
