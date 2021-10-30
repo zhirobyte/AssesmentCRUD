@@ -11,7 +11,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, Dunia!</h1>
+    <h1>Hello, Sukses selalu!</h1>
  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
