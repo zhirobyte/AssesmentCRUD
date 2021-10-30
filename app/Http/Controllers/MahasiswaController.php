@@ -20,10 +20,14 @@ class MahasiswaController extends Controller
     public function index()
     {
         //ini adlaah function untuk index mahasiswa
-        $mahasiswa = Mahasiswa::latest()->paginate(5);
+        // $mahasiswa = Mahasiswa::latest()->paginate(5);
 
-        return view('mahasiswa.index',compact('product'))
-        ->with('1', (request()->input('page',1) - 1) * 5);
+        // return view('mahasiswa.index',compact('mahasiswa'))
+        // ->with('1', (request()->input('page',1) - 1) * 5);
+
+
+        $mahasiswa = Mahasiswa::all();
+        return view('mahasiswa.index', compact('mahasiswa'));
 
 
     }
@@ -48,11 +52,13 @@ class MahasiswaController extends Controller
     public function store(Request $request)
     {
         //nyetorin data ke database
+   
         $request->validate([
             'nama' =>  'required',
-            'nidn' =>  'required',
+            'nim' =>  'required',
+            'tanggal_lahir' => 'required',
             'alamat' =>  'required',
-            'kontak' =>  'required',
+            'tahun_masuk' => 'required',
             'create_at' =>  'required',
             'update_at' =>  'required',
 
@@ -104,7 +110,7 @@ class MahasiswaController extends Controller
 
         $request->validate([
             'nama' =>  'required',
-            'nidn' =>  'required',
+            'nim' =>  'required',
             'alamat' =>  'required',
             'kontak' =>  'required',
             'create_at' =>  'required',

@@ -46,6 +46,6 @@ class CreateDosenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_dosen');
+        Schema::dropIfExists('dosen');
     }
 }

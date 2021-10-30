@@ -43,6 +43,6 @@ class CreateJadwalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_jadwal');
+        Schema::dropIfExists('jadwal');
     }
 }
