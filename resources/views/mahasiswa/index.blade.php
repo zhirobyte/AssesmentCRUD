@@ -2,27 +2,10 @@
 
 @section('content')
 <!-- ini adalah file cssnya untuk center table -->
-  
-<style type="text/css">
-    .table {
-        margin: 60px auto;
-        width: 85%;
-    }
-        h3 {
-    color:  white;
-    }
-        h5 {
-    color:  white;
-    }
-        
- </style>
 
 
-    <h3 class="text-center">Assesment CRUD</h3>
-    <h5 class="text-center">Faiz Hanafi</h5>
-
-    <!-- 
-ini adalah line untuk table -->
+   
+    <!-- ini adalah line untuk table -->
  <table class="table table-bordered table-dark">
  
   <thead>
@@ -35,7 +18,11 @@ ini adalah line untuk table -->
       <th scope="col"class="text-center">Tahun Masuk</th>
       <th scope="col"class="text-center">create at</th>
       <th scope="col"class="text-center">update at</th>
-      <th scope="col"width="290px">Action</th>
+      <th scope="col"width="290px">Action
+      <div class="float-right">
+                <a class="btn btn-success" href="{{ route('mahasiswa.create') }}"> Tambah Mahasiswa</a>
+     </div>
+      </th>
     </tr>
   </thead>
   <tbody>

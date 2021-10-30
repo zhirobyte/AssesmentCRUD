@@ -9,10 +9,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+      
+<style type="text/css">
+    .table {
+        margin: 40px auto;
+        width: 85%;
+    }
+        h3 {
+    color:  white;
+    }
+        h5 {
+    color:  white;
+    }
+        
+ </style>
+
   </head>
+
   <body>
 
-  <body style="background-color:#696969;">
+  <nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    <img src="{{URL::asset('image/ammon.png')}}" width="50" height="50" class="d-inline-block align-text-top">
+    </a>
+    
+    <h3 class="text-center">Assesment CRUD</h3>
+    <h5 class="text-center">Faiz Hanafi</h5>
+  </div>
+</nav>
+  <body style="background-color:#121212;">
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
