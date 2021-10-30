@@ -22,7 +22,7 @@ class CreateJadwalTable extends Migration
      */
     public function up()
     {
-        Schema::create('_jadwal', function (Blueprint $table) {
+        Schema::create('jadwal', function (Blueprint $table) {
             $table->id();
             $table->integer('mahasiswa_id');
             $table->integer('dosen_id');

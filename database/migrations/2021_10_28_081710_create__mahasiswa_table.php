@@ -22,7 +22,7 @@ class CreateMahasiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('_mahasiswa', function (Blueprint $table) {
+        Schema::create('mahasiswa', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->string('nim');

@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
-
+/**
+     * Display a listing of the resource.
+     * controller ini berfungsi sebagai laman menampung berbebagi fungsi  method yang dibutuhkan.
+     * dalam crud sederhanna assesment.
+     *
+     */
 class MahasiswaController extends Controller
 {
     /**
@@ -13,7 +19,13 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        //
+        //ini adlaah function untuk index mahasiswa
+        $mahasiswa = Mahasiswa::latest()->paginate(5);
+
+        return view('mahasiswa.index',compact('product'))
+        ->with('1', (request()->input('page',1) - 1) * 5);
+
+
     }
 
     /**
@@ -23,7 +35,8 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+         //bikin data baru ke database
+        return view('mahasiswa.create');
     }
 
     /**
@@ -34,7 +47,21 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //nyetorin data ke database
+        $request->validate([
+            'nama' =>  'required',
+            'nidn' =>  'required',
+            'alamat' =>  'required',
+            'kontak' =>  'required',
+            'create_at' =>  'required',
+            'update_at' =>  'required',
+
+        ]);
+
+        Mahasiswa::create($request->all());
+        return redirect()->route('mahasiswa.index')
+        ->with('sukses!', 'Mahasiswa berhasil dibuat');
+        //menunjukkan bahwa proses selesai
     }
 
     /**
@@ -43,9 +70,10 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Mahasiswa $mahasiswa)
     {
-        //
+        //ini untuk nampilkan data 
+        return view('mahasiswa.show',compact('mahasiswa'));
     }
 
     /**
@@ -54,9 +82,12 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Mahasiswa $mahasiswa)
     {
-        //
+        //ini untuk ngedit nya
+        return view('mahasiswa.edit',compact('mahasiwa'));
+
+
     }
 
     /**
@@ -66,9 +97,26 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Mahasiswa $mahasiswa )//setiap variable perlu dideclarekan
     {
-        //
+        //in tuh untuk update nya jangan lupa validasi data 
+        //unntuuk keamanan :)
+
+        $request->validate([
+            'nama' =>  'required',
+            'nidn' =>  'required',
+            'alamat' =>  'required',
+            'kontak' =>  'required',
+            'create_at' =>  'required',
+            'update_at' =>  'required',
+
+        ]);
+
+        $mahasiswa->update($request->all());
+
+        return redirect('mahasiswa.index')
+        ->with('Selamat!', 'Mahasiswa berhasil diuppdate');
+        //ucapan berhasil diupdate
     }
 
     /**
@@ -77,8 +125,12 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Mahasiswa $mahasiswa)
     {
-        //
+        //hapus delete hancurin datanya
+        $mahasiswa->delete();
+
+        return redirect()->route('mahasiswa.index')
+        ->with('Selamat!', 'Data berhasil dihapus :)');
     }
 }

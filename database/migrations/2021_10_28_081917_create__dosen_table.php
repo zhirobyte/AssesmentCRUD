@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Schema;
 | Data ini adalah data migration yang saya buat sesuai dengan requirement
 | thanks :)
 | 
+Geometric Gems is a creative exploration of beauty and perfection through geometric shapes, colors, harmony and symmetry, space and dimensions.
+
+A unique selection created by David Mascha. Minted on the Ethereum blockchain.
+
+*Special unlockable content.
 */
 class CreateDosenTable extends Migration
 {
@@ -22,7 +27,7 @@ class CreateDosenTable extends Migration
      */
     public function up()
     {
-        Schema::create('_dosen', function (Blueprint $table) {
+        Schema::create('dosen', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->string('nidn');
