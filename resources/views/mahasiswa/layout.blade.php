@@ -17,17 +17,17 @@
     }
     
         h2 {
-    color: #e7eae5;
+    color: #E1E8ED;
     }
         h5 {
     color: #e7eae5;
     }
 
     h6 {
-    color: #e7eae5;
+    color: #AAB8C2;
     }
     .navbar-custom {
-            background-color: #d35400;
+            background-color: #1DA1F2;
         }
 
      .container {
