@@ -50,22 +50,34 @@ class MahasiswaController extends Controller
     {
         //nyetorin data ke database
    
-        $request->validate([
-            'nama' =>  'required',
-            'nim' =>  'required',
-            'tanggal_lahir' => 'required',
-            'alamat' =>  'required',
-            'tahun_masuk' => 'required',
-            'create_at' =>  'required',
-            'update_at' =>  'required',
+        // $request->validate([
+        //     'nama' =>  'required',
+        //     'nim' =>  'required',
+        //     'tanggal_lahir' => 'required',
+        //     'alamat' =>  'required',
+        //     'tahun_masuk' => 'required',
+        //     'create_at' =>  'required',
+        //     'update_at' =>  'required',
 
-        ]);
+        // ]);
 
-        Mahasiswa::create($request->all());
-        return redirect()->route('mahasiswa.index')
-        ->with('sukses!', 'Mahasiswa berhasil dibuat');
+        // Mahasiswa::create($request->all());
+        // return redirect()->route('mahasiswa.index')
+        // ->with('sukses!', 'Mahasiswa berhasil dibuat');
         //menunjukkan bahwa proses selesai
         
+        $mahasiswa = new Mahasiswa();
+        $mahasiswa->nama = $request->nama;
+        $mahasiswa->nim = $request->nim;
+        $mahasiswa->tanggal_lahir = $request->tanggal_lahir;
+        $mahasiswa->alamat = $request->alamat;
+        $mahasiswa->tahun_masuk = $request->tahun_masuk;
+        $mahasiswa->create_at = $request->create_at;
+        $mahasiswa->update_at = $request->update_at;
+        $mahasiswa->save();
+    
+        return redirect()->route('mahasiswa.index');
+    
         
     }
 

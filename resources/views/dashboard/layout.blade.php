@@ -77,9 +77,9 @@
    
 <div class="container">
   <div class="row">
-    <div class="col text-center">
-      <button class="btn btn-warning">Main Page</button>
-    </div>
+  <div class="float-center">
+                <a class="btn btn-warning" href="{{route('mahasiswa.index')}}">Main Page</a>
+     </div>
   </div>
 </div>
     @yield('content')
