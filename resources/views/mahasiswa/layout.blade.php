@@ -12,29 +12,43 @@
       
 <style type="text/css">
     .table {
-        margin: 40px auto;
-        width: 85%;
+        margin: 35px auto;
+        width: 90%;
     }
-        h3 {
-    color:  white;
+    
+        h2 {
+    color: #e7eae5;
     }
         h5 {
-    color:  white;
+    color: #e7eae5;
+    }
+
+    h6 {
+    color: #e7eae5;
+    }
+    .navbar-custom {
+            background-color: #d35400;
+        }
+
+     .container {
+        margin: 30px auto;
+      
     }
         
+
  </style>
 
   </head>
 
   <body>
 
-  <nav class="navbar navbar-light bg-dark">
+  <nav class="navbar navbar-custom">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
     <img src="{{URL::asset('image/ammon.png')}}" width="50" height="50" class="d-inline-block align-text-top">
     </a>
     
-    <h3 class="text-center">Assesment CRUD</h3>
+    <h2 class="text-center">Assesment CRUD</h2>
     <h5 class="text-center">Faiz Hanafi</h5>
   </div>
 </nav>
@@ -45,10 +59,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
-  
+   
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn btn-warning">Main Page</button>
+    </div>
+  </div>
+</div>
     @yield('content')
-
+    
   
+    
+   
 
   </body>
 </html>

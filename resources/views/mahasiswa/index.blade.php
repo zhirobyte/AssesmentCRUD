@@ -10,17 +10,17 @@
  
   <thead>
     <tr>
-      <th scope="col"class="text-center">ID</th>
+      <th scope="col"class="text-center">Id</th>
       <th scope="col"class="text-center">Nama</th>
       <th scope="col"class="text-center">Nim</th>
-      <th scope="col"class="text-center">Tgl Lahir</th>
+      <th scope="col"class="text-center">Tgl-Lahir</th>
       <th scope="col"class="text-center">Alamat</th>
-      <th scope="col"class="text-center">Tahun Masuk</th>
+      <th scope="col"class="text-center">Masuk</th>
       <th scope="col"class="text-center">create at</th>
       <th scope="col"class="text-center">update at</th>
-      <th scope="col"width="290px">Action
+      <th scope="col"class="text-center">Action
       <div class="float-right">
-                <a class="btn btn-success" href="{{ route('mahasiswa.create') }}"> Tambah Mahasiswa</a>
+                <a class="btn btn-success" href="{{ route('mahasiswa.create') }}">+ Mahasiswa</a>
      </div>
       </th>
     </tr>
@@ -47,5 +47,7 @@
 
 </table>
 
+<h5 class="text-center">Page of Index Mahasiswa</h5>
+<h6 class="text-center">Faiz Hanafi - 2021</h6>
 
 @endsection
