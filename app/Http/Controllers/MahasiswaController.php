@@ -20,10 +20,6 @@ class MahasiswaController extends Controller
     public function index()
     {
         //ini adlaah function untuk index mahasiswa
-        // $mahasiswa = Mahasiswa::latest()->paginate(5);
-
-        // return view('mahasiswa.index',compact('mahasiswa'))
-        // ->with('1', (request()->input('page',1) - 1) * 5);
 
 
         $mahasiswa = Mahasiswa::all();
@@ -40,7 +36,8 @@ class MahasiswaController extends Controller
     public function create()
     {
          //bikin data baru ke database
-        return view('mahasiswa.create');
+         $mahasiswa = new Mahasiswa;
+         return view('mahasiswa.create', compact('mahasiswa'));
     }
 
     /**
@@ -68,6 +65,8 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa.index')
         ->with('sukses!', 'Mahasiswa berhasil dibuat');
         //menunjukkan bahwa proses selesai
+        
+        
     }
 
     /**

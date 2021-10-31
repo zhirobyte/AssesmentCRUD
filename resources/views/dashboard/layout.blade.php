@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
+  
   <head>
+    <!-- /**
+     * layout ini bertujuan untuk memberikan halaman static berupa custom
+     * navbar yang berada pada semua tampilan dibeberapa pages yang beerbeda
+     * ditambahkan dengan fungsi extends @ agar dapaat dipanggil :)
+     *
+     */ -->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,12 +15,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>AssesmentCRUD</title>
       
 <style type="text/css">
     .table {
         margin: 35px auto;
         width: 90%;
+    }
+    .form{
+      margin: 35px auto;
+        width: 50%;
+
+    }
+    form, label {
+    color: white !important;
     }
     
         h2 {

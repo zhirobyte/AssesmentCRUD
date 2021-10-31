@@ -1,4 +1,4 @@
-@extends('mahasiswa.layout')
+@extends('dashboard.layout')
 
 @section('content')
 <!-- ini adalah file cssnya untuk center table -->
@@ -20,9 +20,9 @@
       <th scope="col"class="text-center">update at</th>
       <th scope="col"class="text-center">
       <div class="float-center">
-                <a class="btn btn-success" href="{{ route('mahasiswa.create') }}">+ Mahasiswa</a>
+                <a class="btn btn-success" href="{{route('mahasiswa.create')}}">+ Mahasiswa</a>
      </div>
-     Action
+            Action
       </th>
     </tr>
   </thead>

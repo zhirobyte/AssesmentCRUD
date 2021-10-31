@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Schema;
 | thanks :)
 | 
 */
+
 class CreateMahasiswaTable extends Migration
 {
     /**
