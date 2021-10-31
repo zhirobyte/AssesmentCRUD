@@ -18,10 +18,11 @@
       <th scope="col"class="text-center">Masuk</th>
       <th scope="col"class="text-center">create at</th>
       <th scope="col"class="text-center">update at</th>
-      <th scope="col"class="text-center">Action
-      <div class="float-right">
+      <th scope="col"class="text-center">
+      <div class="float-center">
                 <a class="btn btn-success" href="{{ route('mahasiswa.create') }}">+ Mahasiswa</a>
      </div>
+     Action
       </th>
     </tr>
   </thead>

@@ -17,7 +17,7 @@
     }
     
         h2 {
-    color: #E1E8ED;
+    color: #F5F8FA;
     }
         h5 {
     color: #F5F8FA;
