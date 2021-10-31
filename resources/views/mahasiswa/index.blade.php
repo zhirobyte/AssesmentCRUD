@@ -38,10 +38,20 @@
          <td>{{ $value->create_at}}</td>
          <td>{{ $value->update_at}}</td>
          <td>
+         <form action="{{url('mahasiswa.destroy')}}" method="POST">
          <button type="submit" class="btn btn-info">Show</button>
          <button type="submit" class="btn btn-primary">Edit</button>
+         
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Delete</button>
+         </form>
+         <!-- <button type="submit" class="btn btn-info">Show</button>
+         <button type="submit" class="btn btn-primary">Edit</button>
          <button type="submit" class="btn btn-danger">Delete</button>
-         </td>
+          -->
+        
+        </td>
         </tr>
     @endforeach
   </tbody>
