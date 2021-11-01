@@ -50,21 +50,6 @@ class MahasiswaController extends Controller
     {
         //nyetorin data ke database
    
-        // $request->validate([
-        //     'nama' =>  'required',
-        //     'nim' =>  'required',
-        //     'tanggal_lahir' => 'required',
-        //     'alamat' =>  'required',
-        //     'tahun_masuk' => 'required',
-        //     'create_at' =>  'required',
-        //     'update_at' =>  'required',
-
-        // ]);
-
-        // Mahasiswa::create($request->all());
-        // return redirect()->route('mahasiswa.index')
-        // ->with('sukses!', 'Mahasiswa berhasil dibuat');
-        //menunjukkan bahwa proses selesai
         
         $mahasiswa = new Mahasiswa();
         $mahasiswa->nama = $request->nama;
@@ -99,12 +84,11 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mahasiswa $mahasiswa)
+    
+    public function edit($id)
     {
-        //ini untuk ngedit nya
-        return view('mahasiswa.edit',compact('mahasiwa'));
-
-
+        $mahasiswa = mahasiswa::find($id); 
+        return view('mahasiswa.edit', compact('mahasiswa'));
     }
 
     /**
@@ -114,26 +98,20 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Mahasiswa $mahasiswa )//setiap variable perlu dideclarekan
+    public function update(Request $request, $id)
+
     {
-        //in tuh untuk update nya jangan lupa validasi data 
-        //unntuuk keamanan :)
-
-        $request->validate([
-            'nama' =>  'required',
-            'nim' =>  'required',
-            'alamat' =>  'required',
-            'kontak' =>  'required',
-            'create_at' =>  'required',
-            'update_at' =>  'required',
-
-        ]);
-
-        $mahasiswa->update($request->all());
-
-        return redirect('mahasiswa.index')
-        ->with('Selamat!', 'Mahasiswa berhasil diuppdate');
-        //ucapan berhasil diupdate
+       
+        $mahasiswa = Mahasiswa::find($id);
+        $mahasiswa->nama = $request->nama;
+        $mahasiswa->nim = $request->nim;
+        $mahasiswa->tanggal_lahir = $request->tanggal_lahir;
+        $mahasiswa->alamat = $request->alamat;
+        $mahasiswa->tahun_masuk = $request->tahun_masuk;
+        $mahasiswa->create_at = $request->create_at;
+        $mahasiswa->update_at = $request->update_at;
+        $mahasiswa->save();
+        return redirect('mahasiswa');
     }
 
     /**
@@ -142,11 +120,11 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mahasiswa $mahasiswa)
+    public function destroy($id)
     {
         //hapus delete hancurin datanya
+        $mahasiswa = Mahasiswa::find($id);
         $mahasiswa->delete();
-
         return redirect()->route('mahasiswa.index')
         ->with('Selamat!', 'Data berhasil dihapus :)');
     }

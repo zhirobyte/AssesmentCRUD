@@ -21,6 +21,12 @@ Route::get('/', function () {
 });
 
 Route::resource('jadwal', JadwalController::class);
+
+
+
 Route::resource('dosen', DosenController::class);
+
+
+
 Route::resource('mahasiswa', MahasiswaController::class);
 

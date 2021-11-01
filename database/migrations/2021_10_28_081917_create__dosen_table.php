@@ -33,8 +33,8 @@ class CreateDosenTable extends Migration
             $table->string('nidn');
             $table->string('alamat');
             $table->string('kontak');
-            $table->string('create_at');
-            $table->string('update_at');
+            $table->dateTime('create_at');
+            $table->dateTime('update_at');
             $table->timestamps();
         });
     }

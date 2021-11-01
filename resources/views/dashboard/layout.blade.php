@@ -20,14 +20,14 @@
 <style type="text/css">
     .table {
         margin: 35px auto;
-        width: 90%;
+        width: 80%;
     }
     .form{
       margin: 35px auto;
         width: 50%;
 
     }
-    form, label {
+   label {
     color: white !important;
     }
     
@@ -41,15 +41,16 @@
     h6 {
     color: #AAB8C2;
     }
+
     .navbar-custom {
             background-color: #1DA1F2;
         }
-
+        
      .container {
         margin: 30px auto;
       
     }
-        
+  
 
  </style>
 
@@ -64,7 +65,7 @@
     </a>
     
     <h2 class="text-center">Assesment CRUD</h2>
-    <h5 class="text-center">Faiz Hanafi</h5>
+    <h5 class="text-center">ESQBS</h5>
   </div>
 </nav>
   <body style="background-color:#121212;">
@@ -77,7 +78,7 @@
    
 <div class="container">
   <div class="row">
-  <div class="float-center">
+  <div class="col text-center">
                 <a class="btn btn-warning" href="{{route('mahasiswa.index')}}">Main Page</a>
      </div>
   </div>

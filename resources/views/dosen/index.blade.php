@@ -12,17 +12,17 @@
     <tr>
       <th scope="col"class="text-center">Id</th>
       <th scope="col"class="text-center">Nama</th>
-      <th scope="col"class="text-center">Nim</th>
-      <th scope="col"class="text-center">Tgl-Lahir</th>
-      <th scope="col"class="text-center">Alamat</th>
-      <th scope="col"class="text-center">Masuk</th>
+      <th scope="col"class="text-center">Nidn</th>
+      <th scope="col"class="text-center">Kontak</th>
+      <!-- <th scope="col"class="text-center">Alamat</th>
       <th scope="col"class="text-center">create at</th>
-      <th scope="col"class="text-center">update at</th>
-      <th scope="col"class="text-center">
-      <div class="float-center">
-                <a class="btn btn-success" href="{{ route('mahasiswa.create') }}">+ Dosen</a>
+      <th scope="col"class="text-center">update at</th> -->
+      <th scope="col"class="text-center" width="230px">
+      Action
+      <div class="float-center" >
+                <a class="btn btn-success" href="{{ route('dosen.create') }}">+ Dosen</a>
      </div>
-     Action
+  
       </th>
     </tr>
   </thead>
@@ -31,16 +31,30 @@
     <tr>
          <td>{{ $value->id}}</td>
          <td>{{ $value->nama}}</td>
-         <td>{{ $value->nim}}</td>  
-         <td>{{ $value->tanggal_lahir}}</td>
-         <td>{{ $value->alamat}}</td>
-         <td>{{ $value->tahun_masuk}}</td>
+         <td>{{ $value->nidn}}</td>  
+         <td>{{ $value->kontak}}</td>
+         <!-- <td>{{ $value->alamat}}</td>
          <td>{{ $value->create_at}}</td>
-         <td>{{ $value->update_at}}</td>
+         <td>{{ $value->update_at}}</td> -->
          <td>
-         <button type="submit" class="btn btn-info">Show</button>
-         <button type="submit" class="btn btn-primary">Edit</button>
-         <button type="submit" class="btn btn-danger">Delete</button>
+        <!-- ini tuh adalah baris button dengan inline block -->
+        <form style ="display:inline-block;">
+        <a type="submit" class="btn btn-info" href="{{ route('dosen.show',$value->id) }}">Detail</a>
+        </form>
+
+          <!-- ini tuh adalah baris button edit dengan inline block -->
+        <form style ="display:inline-block;">
+        <a type="submit" class="btn btn-primary" href="{{route('dosen.edit',$value->id) }}">Edit</a>  
+        </form
+        
+        >
+       <!-- ini tuh adalah baris button delete dengan inline block --> 
+        <form action="{{ route('dosen.destroy',$value->id) }}" style ="display:inline-block;" method="POST">
+            @csrf
+            @method('DELETE')
+        <button type="submit" class="btn btn-danger" href="{{ route('dosen.destroy',$value->id)}}">Delete</button>
+        </form>
+    </tr>
          </td>
         </tr>
     @endforeach

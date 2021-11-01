@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Dosen;
 use Illuminate\Http\Request;
 
 class DosenController extends Controller
@@ -13,7 +13,11 @@ class DosenController extends Controller
      */
     public function index()
     {
-        //
+           //ini adlaah function untuk index dosen
+
+           $dosen = Dosen::all();
+           return view('dosen.index', compact('dosen'));
+   
     }
 
     /**
@@ -23,7 +27,9 @@ class DosenController extends Controller
      */
     public function create()
     {
-        //
+           //bikin data baru ke database
+           $dosen = new Dosen;
+           return view('dosen.create', compact('dosen'));
     }
 
     /**
@@ -34,7 +40,17 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
+        $dosen = new Dosen();
+        $dosen->nama = $request->nama;
+        $dosen->nidn = $request->nidn;
+        $dosen->alamat = $request->alamat;
+        $dosen->kontak = $request->kontak;
+        $dosen->create_at = $request->create_at;
+        $dosen->update_at = $request->update_at;
+        $dosen->save();
+    
+        return redirect()->route('dosen.index');
     }
 
     /**
@@ -43,9 +59,9 @@ class DosenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Dosen $dosen)
     {
-        //
+        return view('dosen.show',compact('dosen'));
     }
 
     /**
@@ -56,7 +72,8 @@ class DosenController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dosen = dosen::find($id); 
+        return view('dosen.edit', compact('dosen'));
     }
 
     /**
@@ -68,7 +85,15 @@ class DosenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dosen = Dosen::find($id);
+        $dosen->nama = $request->nama;
+        $dosen->nidn = $request->nidn;
+        $dosen->alamat = $request->alamat;
+        $dosen->kontak = $request->kontak;
+        $dosen->create_at = $request->create_at;
+        $dosen->update_at = $request->update_at;
+        $dosen->save();
+        return redirect('dosen');
     }
 
     /**
@@ -78,7 +103,10 @@ class DosenController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   //hapus delete hancurin datanya
+        $dosen = Dosen::find($id);
+        $dosen->delete();
+        return redirect()->route('mahasiswa.index')
+        ->with('Selamat!', 'Data berhasil dihapus :)');
     }
 }
