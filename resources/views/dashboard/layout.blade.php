@@ -77,10 +77,11 @@
   
    
 <div class="container">
-  <div class="row">
-  <div class="col text-center">
-                <a class="btn btn-warning" href="{{route('mahasiswa.index')}}">Main Page</a>
-     </div>
+  <div class="btn-group" role="group" aria-label="Basic example">
+      <a type="button" class="btn btn-warning" href="{{route('dosen.index')}}">Dosen</a>
+      <a type="button" class="btn btn-warning" href="{{route('jadwal.index')}}">Jadwal</a>
+      <a type="button" class="btn btn-warning" href="{{route('mahasiswa.index')}}">Mahasiswa</a>      
+    </div>
   </div>
 </div>
     @yield('content')
