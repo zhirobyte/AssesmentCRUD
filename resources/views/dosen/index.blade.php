@@ -37,6 +37,7 @@
          <td>{{ $value->create_at}}</td>
          <td>{{ $value->update_at}}</td> -->
          <td>
+
         <!-- ini tuh adalah baris button dengan inline block -->
         <form style ="display:inline-block;">
         <a type="submit" class="btn btn-info" href="{{ route('dosen.show',$value->id) }}">Detail</a>
@@ -44,10 +45,10 @@
 
           <!-- ini tuh adalah baris button edit dengan inline block -->
         <form style ="display:inline-block;">
-        <a type="submit" class="btn btn-primary" href="{{route('dosen.edit',$value->id) }}">Edit</a>  
-        </form
-        
-        >
+        <a type="submit" class="btn btn-primary" href="{{ route('dosen.edit',$value->id) }}">Edit</a>  
+        </form>
+
+ 
        <!-- ini tuh adalah baris button delete dengan inline block --> 
         <form action="{{ route('dosen.destroy',$value->id) }}" style ="display:inline-block;" method="POST">
             @csrf
@@ -55,8 +56,7 @@
         <button type="submit" class="btn btn-danger" href="{{ route('dosen.destroy',$value->id)}}">Delete</button>
         </form>
     </tr>
-         </td>
-        </tr>
+      
     @endforeach
   </tbody>
 

@@ -61,9 +61,10 @@ class DosenController extends Controller
      */
     public function show(Dosen $dosen)
     {
+        //ini untuk nampilkan data 
         return view('dosen.show',compact('dosen'));
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -106,7 +107,7 @@ class DosenController extends Controller
     {   //hapus delete hancurin datanya
         $dosen = Dosen::find($id);
         $dosen->delete();
-        return redirect()->route('mahasiswa.index')
+        return redirect()->route('dosen.index')
         ->with('Selamat!', 'Data berhasil dihapus :)');
     }
 }
