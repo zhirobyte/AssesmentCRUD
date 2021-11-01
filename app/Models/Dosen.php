@@ -9,7 +9,16 @@ class Dosen extends Model
 {
     use HasFactory;
     protected $table = 'dosen';
-    
+ 
+    protected $fillable = [
+        'nama',
+        'nidn',
+        'alamat',
+        'kontak',
+        'create_at',
+        'update_at',
+
+    ]; 
 }
 
 

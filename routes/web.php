@@ -24,6 +24,7 @@ Route::resource('jadwal', JadwalController::class);
 
 
 
+
 Route::resource('dosen', DosenController::class);
 
 

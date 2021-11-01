@@ -28,19 +28,17 @@
   </thead>
   <tbody>
       @foreach ($dosen as $key=>$value) 
-    <tr>
+         <tr>
          <td>{{ $value->id}}</td>
          <td>{{ $value->nama}}</td>
          <td>{{ $value->nidn}}</td>  
          <td>{{ $value->kontak}}</td>
-         <!-- <td>{{ $value->alamat}}</td>
-         <td>{{ $value->create_at}}</td>
-         <td>{{ $value->update_at}}</td> -->
+
          <td>
 
         <!-- ini tuh adalah baris button dengan inline block -->
         <form style ="display:inline-block;">
-        <a type="submit" class="btn btn-info" href="{{ route('dosen.show',$value->id) }}">Detail</a>
+        <a type="submit" class="btn btn-info" href="{{ route('dosen.show', $value->id)}}">Detail</a>
         </form>
 
           <!-- ini tuh adalah baris button edit dengan inline block -->

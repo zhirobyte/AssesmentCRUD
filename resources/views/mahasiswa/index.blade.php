@@ -42,9 +42,8 @@
           <!-- ini tuh adalah baris button edit dengan inline block -->
         <form style ="display:inline-block;">
         <a type="submit" class="btn btn-primary" href="{{route('mahasiswa.edit',$value->id) }}">Edit</a>  
-        </form
+        </form>
         
-        >
        <!-- ini tuh adalah baris button delete dengan inline block --> 
         <form action="{{ route('mahasiswa.destroy',$value->id) }}" style ="display:inline-block;" method="POST">
             @csrf

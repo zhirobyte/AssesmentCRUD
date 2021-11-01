@@ -24,8 +24,8 @@ class CreateJadwalTable extends Migration
     {
         Schema::create('jadwal', function (Blueprint $table) {
             $table->id();
-            $table->integer('mahasiswa_id');
-            $table->integer('dosen_id');
+            $table->foreignId('mahasiswa_id')->references('id')->on('mahasiswa');
+            $table->foreignId('dosen_id')->references('id')->on('dosen');
             $table->string('judul');
             $table->string('deskripsi');
             $table->dateTime('awal');

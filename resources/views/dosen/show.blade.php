@@ -7,7 +7,7 @@
  
   <thead>
     <tr>
-    <th scope="col"class="text-center">Id</th>
+      <th scope="col"class="text-center">Id</th>
       <th scope="col"class="text-center">Nama</th>
       <th scope="col"class="text-center">Nidn</th>
       <th scope="col"class="text-center">Kontak</th>
@@ -18,13 +18,13 @@
   </thead>
   <tbody>
     <tr>
-        <td>{{ $value->id}}</td>
-         <td>{{ $value->nama}}</td>
-         <td>{{ $value->nidn}}</td>  
-         <td>{{ $value->kontak}}</td>
-         <td>{{ $value->alamat}}</td>
-         <td>{{ $value->create_at}}</td>
-         <td>{{ $value->update_at}}</td>
+         <td>{{ $dosen->id}}</td>
+         <td>{{ $dosen->nama}}</td>
+         <td>{{ $dosen->nidn}}</td>  
+         <td>{{ $dosen->kontak}}</td>
+         <td>{{ $dosen->alamat}}</td>
+         <td>{{ $dosen->create_at}}</td>
+         <td>{{ $dosen->update_at}}</td>
     </tr>
   </tbody>
 </table>
